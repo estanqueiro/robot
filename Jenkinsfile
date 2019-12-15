@@ -1,10 +1,20 @@
 pipeline {
-   agent any
+   agent {
+      docker   {
+         image "python"
+      }
+   }
 
    stages {
-      stage('Tests') {
+      stage("Build") {
          steps {
-            sh 'robot -d ./results /specs/api'
+            sh "pip install -r requirements.txt"
+         }
+      }
+      
+      stage("Tests") {
+         steps {
+            sh "robot -d ./results /specs/api"
          }
       }
    }
