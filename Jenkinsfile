@@ -14,7 +14,7 @@ pipeline {
       
       stage("Tests") {
          steps {
-            sh "robot -d ./results /specs/api"
+            sh "robot -d results specs/api"
          }
       }
    }
