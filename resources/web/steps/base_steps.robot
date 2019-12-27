@@ -9,15 +9,9 @@ ${BROWSER}              headlesschrome
 
 *** Keywords ***
 Abrir navegador
-    Open Browser    ${DEFAULT_URL}     ${BROWSER}
+    Open Browser    ${DEFAULT_URL}  ${BROWSER}
     Set Selenium Implicit Wait  10
-    Maximize Browser Window
-
-Informando credenciais de acesso
-    [Arguments]     ${email}            ${pass}
-    Input Text      ${INPUT_EMAIL}      ${email}
-    Input Text      ${INPUT_PASS}       ${pass}
-    Click Button    ${BUTTON_SUBMIT}
+    Set Window Size     1280    800
 
 Fechar navegador
     Capture Page Screenshot
