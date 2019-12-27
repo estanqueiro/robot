@@ -13,6 +13,12 @@ Abrir navegador
     Set Selenium Implicit Wait  10
     Maximize Browser Window
 
+Informando credenciais de acesso
+    [Arguments]     ${email}            ${pass}
+    Input Text      ${INPUT_EMAIL}      ${email}
+    Input Text      ${INPUT_PASS}       ${pass}
+    Click Button    ${BUTTON_SUBMIT}
+
 Fechar navegador
     Capture Page Screenshot
     Close Browser
